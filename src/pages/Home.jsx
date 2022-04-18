@@ -50,10 +50,7 @@ const dispatch = useDispatch();
         //Despacha los datos a el store global
         dispatch(setListProduct(result.productos));
 
-        setProducts(products)
-
-        // console.log("REDISSSS" , products)
-
+        setProducts(products);
       });
 
     }catch(Exception  ){

@@ -2,8 +2,10 @@ import React from 'react';
 import { useState } from "react";
 import CartItem from '../components/CartItem/CartItem';
 import Navbar from '../components/navbar/Navbar'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {setCartProduct } from "../slices/productSlice";
 import { useHistory } from "react-router-dom";
+import {setTotalCartPrice} from "../slices/productSlice";
 import formatPrice from "../utils/format";
 import "../scss/Cart.scss";
 
@@ -14,11 +16,13 @@ export default function Cart() {
   let history = useHistory();
   const unidadesProducto = useSelector((state) => state.product.unidades);
   const listCartProducts = useSelector((state) => state.product.listCartProducts);
+  const totalPrice = useSelector((state) => state.product.totalCartPrice);
+ 
 
   const [items , setItems] = useState([]);
   const [total, setTotal] = useState([]);
 
-  // console.log(listCartProducts, unidadesProducto , "aja")
+  const dispatch = useDispatch();
 
 
   const goCheckout =() => {
@@ -35,18 +39,25 @@ const getProductsFromCart = () => {
         .then((result) => {
           //Variable que contiene todos los resultados de la busqueda
           const item = result.carrito;
-      
           setItems(item);
           setTotal(result.total);
 
-        });
+          dispatch(setTotalCartPrice(result.total));
+          console.log(totalPrice , "PRECIO GLOBAL")
+
+          dispatch(setCartProduct(item));
+
+        })
+        .catch(err => {
+          return Promise.reject(err)
+        })
 
       }catch(Exception  ){
 
       }
     }
 
-    getProductsFromCart();
+getProductsFromCart();
 
   return (
     <div>
@@ -65,8 +76,15 @@ const getProductsFromCart = () => {
 
         }
 
-      <div className="total">
-        <h4 className='total-text' >Total : {formatPrice(total)}</h4>
+      <div className="container total-container">
+      <div className="row">
+          <div className="col-6">
+            <p className='total-text'>Total : </p>
+           </div>
+           <div className="col-6 ">
+            <p className='total-text-price'>{formatPrice(total)}</p>
+           </div>
+      </div>
       </div>
       <button onClick={()=> goCheckout()} className='cart-btn'>Continuar</button>
     </div>

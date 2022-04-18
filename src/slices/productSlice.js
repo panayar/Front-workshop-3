@@ -7,7 +7,8 @@ const initialState = {
     listCartProducts: [],
     productDetail: {},
     productDescription:"",
-    listCategory: []
+    listCategory: [],
+    totalCartPrice : [],
 
 }
  
@@ -19,6 +20,10 @@ export const productSlice = createSlice({
         //Metodo para cargar los datos de la busqueda
         setListProduct: (state, action) => {
             state.listProducts = action.payload
+        },
+
+        setTotalCartPrice: (state, action) => {
+            state.totalCartPrice = action.payload
         },
 
         setUnidades : (state, action) => {
@@ -45,6 +50,6 @@ export const productSlice = createSlice({
 })
 
 //Se exportan los metodos para poder ser usados globalmente
-export const { setListProduct, setProductDetail, setProductDescription , setCartProduct , setListCategory, setUnidades} = productSlice.actions
+export const { setListProduct, setProductDetail, setProductDescription , setCartProduct , setListCategory, setUnidades, setTotalCartPrice} = productSlice.actions
 
 export default productSlice.reducer

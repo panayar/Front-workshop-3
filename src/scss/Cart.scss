@@ -34,8 +34,18 @@
     margin-top: 5px;
 }
 .total-text {
-    margin-right: auto;
-    text-align: right;
+    font-size: 25px;
+    text-align: left;
     overflow-y: hidden;
 
+}
+
+.total-container {
+    border-top: 1px solid rgb(214,214,214);
+}
+
+.total-text-price {
+    font-size: 25px;
+    text-align: right;
+    margin-right: auto;
 }

@@ -53,6 +53,7 @@ console.log(unidadesProducto)
   // console.log(productDetail)
 
 
+  //Agregar postgres 
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -63,9 +64,21 @@ console.log(unidadesProducto)
 };
 fetch('http://localhost:8080/carrito/addProduct/1', requestOptions)
     .then(response => response.json())
-    .then(data => console.log(data));
-}
 
+    //Agregar redis 
+    const requestOptionsRedis = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        "variante_id" : productDetail.variante_id ,
+        "cantidad" : unidadesProducto
+      })
+  };
+
+  fetch('http://localhost:8080/redis/addToCarrito/1', requestOptions)
+    .then(response => response.json())
+
+}
 
 
 return (
