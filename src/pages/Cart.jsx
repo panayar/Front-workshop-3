@@ -43,7 +43,6 @@ const getProductsFromCart = () => {
           setTotal(result.total);
 
           dispatch(setTotalCartPrice(result.total));
-          console.log(totalPrice , "PRECIO GLOBAL")
 
           dispatch(setCartProduct(item));
 

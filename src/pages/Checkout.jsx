@@ -13,19 +13,22 @@ export default function Checkout() {
     const username = document.querySelector("#username");
     const phone = document.querySelector("#phone");
     const email = document.querySelector("#email");
-    const password = "1234";
+    const password = document.querySelector("#password");
     const address = document.querySelector("#address");
     const tipoDocumento = "2";
-    const numeroDocumento = "7777777";    
-    const tipoTarjeta = "1"
+    const numeroDocumento = document.querySelector("#documento-numero");
+    const tipoTarjeta = "Martercard"
     const cvv = document.querySelector("#cc-cvv");
-    const nombreTajeta = "Mastercard"
+    const nombreTajeta = document.querySelector("#cc-name");
     const numeroTarjeta = document.querySelector("#cc-number");
     const fechaVencimiento = document.querySelector("#cc-expiration");
 
+ 
 
-    const onChekout = (e) => {
+
+const onChekout = (e) => {
         e.preventDefault();
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -33,32 +36,30 @@ export default function Checkout() {
 
                 {
                     "id_documento" : 1,
-                    "username" : "popo",
-                    "num_doc" : 123456789,
-                    "nombres" : "Jo Alerto",
-                    "apellidos" : "erez Madrigal",
-                    "telefono" : 38292748,
-                    "correo" : "jrgito@unbosque.edu.co", 
-                    "clave" : "13455", 
-                    "direccion" : "calle 8 #87b - 51", 
-                    "tarjeta_tipo" : "Davivienda", 
-                    "numero_tarjeta" : "18808271827423", 
-                    "nombre_tarjeta" : "Joge Madrigal", 
-                    "expiracion" : "02/06", 
-                    "cvv" : "172"
+                    "username" : username.value,
+                    "num_doc" : numeroDocumento.value,
+                    "nombres" : nombre.value,
+                    "apellidos" : apellido.value,
+                    "telefono" : phone.value,
+                    "correo" : email.value,
+                    "clave" : password.value,
+                    "direccion" : address.value,
+                    "tarjeta_tipo" : tipoTarjeta,
+                    "numero_tarjeta" : numeroTarjeta.value,
+                    "nombre_tarjeta" : nombreTajeta.value,
+                    "expiracion" : fechaVencimiento.value,
+                    "cvv" : cvv.value
                 }
 
             )
         };
-      
+
         fetch('http://localhost:8080/checkout/create/1', requestOptions)
           .then(response => response.json())
-          .then(data => {console.log(data)})
+          .then(data => {alert(data.message)})
        
 
     }
-
-    
 
 
 return (
@@ -70,7 +71,6 @@ return (
             <div className="col-md-4 order-md-2 mb-4">
                 <h4 className="d-flex justify-content-between align-items-center mb-3">
                     <span className="text-muted">Your cart</span>
-                    <span className="badge badge-secondary badge-pill">3</span>
                 </h4>
                 <CheckoutCart/>
             </div>
@@ -142,8 +142,8 @@ return (
                     <div className="row">
                         <div className="col-md-5 mb-3">
                             <label for="country">Tipo de documento</label>
-                            <select className="form-select d-block w-100" id="country" >
-                                <option value="">Choose...</option>
+                            <select className="form-select d-block w-100" id="tipo-documento" >
+                                <option value="0">Choose...</option>
                                 <option value="2">C.C</option>
                                 <option value="1">C.E</option>
                                 <option value="3">T.I</option>
@@ -155,7 +155,7 @@ return (
                         </div>
                         <div className="col-md-4 mb-3">
                             <label for="state">Numero de documento</label>
-                            <input type="text" className="form-control" id="documento" placeholder="documento" ></input>
+                            <input type="text" className="form-control" id="documento-numero" placeholder="documento" ></input>
                         </div>
 
                     </div>
@@ -167,17 +167,17 @@ return (
                         <div className="custom-control custom-radio">
                             <input id="credit" name="paymentMethod" type="radio" className="custom-control-input"
                                  ></input>
-                            <label className="custom-control-label" for="credit">Credit card</label>
+                            <label className="custom-control-label" for="credit">Mastercard</label>
                         </div>
                         <div className="custom-control custom-radio">
                             <input id="debit" name="paymentMethod" type="radio" className="custom-control-input"
                                 ></input>
-                            <label className="custom-control-label" for="debit">Debit card</label>
+                            <label className="custom-control-label" for="debit">Visa</label>
                         </div>
                         <div className="custom-control custom-radio">
                             <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input"
                                 ></input>
-                            <label className="custom-control-label" for="paypal">PayPal</label>
+                            <label className="custom-control-label" for="paypal">Other</label>
                         </div>
                     </div>
                     <div className="row">

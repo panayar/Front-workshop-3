@@ -11,10 +11,6 @@ export default function CheckoutCart() {
 const listCartProducts = useSelector((state) => state.product.listCartProducts);
 const totalPrice = useSelector((state) => state.product.totalCartPrice);
 
-
-
-console.log(listCartProducts);
-
 return (
 <div>
     <div className="">
