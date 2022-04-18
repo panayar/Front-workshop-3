@@ -11,7 +11,6 @@ export default function CartItem({picture, title, price , retailer, units, total
         </div>
         <div className="cart-detail" id="detalle">
             <p className="cart-title">{title}</p>
-            <p className="cart-retailer">{retailer}</p>
         </div>
         <div className="cart-unidades">
             <p>Unidades</p>
@@ -28,5 +27,5 @@ export default function CartItem({picture, title, price , retailer, units, total
         </div>
 
     </div>
-  )
+)
 }

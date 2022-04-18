@@ -36,7 +36,7 @@ const dispatch = useDispatch();
     history.push(`/detail-product/${id}`);
   };
 
-  //Obtner datos de inicio con los item de redis
+  //Obtener datos de inicio con los item de redis
   const getProductsFromRedis = () => {
 
     try {
