@@ -23,8 +23,6 @@ export default function Checkout() {
     const numeroTarjeta = document.querySelector("#cc-number");
     const fechaVencimiento = document.querySelector("#cc-expiration");
 
- 
-
 
 const onChekout = (e) => {
         e.preventDefault();
@@ -81,7 +79,7 @@ return (
                     <div className="row">
                         <div className="col-md-6 mb-3">
                             <label for="firstName">First name</label>
-                            <input type="text" className="form-control" id="firstName" 
+                            <input type="text" className="form-control" id="firstName" required
                                 ></input>
                             <div className="invalid-feedback">
                                 Valid first name is required.
@@ -89,7 +87,7 @@ return (
                         </div>
                         <div className="col-md-6 mb-3">
                             <label for="lastName">Last name</label>
-                            <input type="text" className="form-control" id="lastName" 
+                            <input type="text" className="form-control" id="lastName" required
                                 ></input>
                             <div className="invalid-feedback">
                                 Valid last name is .
@@ -101,12 +99,12 @@ return (
                     <div className="row">
                         <div className="mb-3 col-md-6 ">
                             <label for="username">Username</label>
-                            <input type="text" className="form-control" id="username"></input>
+                            <input type="text" className="form-control" id="username" required></input>
                         </div>
 
                         <div className="mb-3 col-md-6 ">
                             <label for="phonenumber">Phone number</label>
-                            <input type="number" className="form-control" id="phone"
+                            <input type="number" className="form-control" id="phone" required
                             ></input>
                         </div>
 
@@ -116,7 +114,7 @@ return (
 
                     <div className="mb-3">
                         <label for="email">Email</label>
-                        <input type="email" className="form-control" id="email" placeholder="you@example.com"></input>
+                        <input type="email" className="form-control" id="email" placeholder="you@example.com" required></input>
                         <div className="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -124,7 +122,7 @@ return (
 
                     <div className="mb-3">
                         <label for="password">Password</label>
-                        <input type="password" className="form-control" id="password" placeholder="password"></input>
+                        <input type="password" className="form-control" id="password" placeholder="password" required></input>
                         <div className="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -132,7 +130,7 @@ return (
 
                     <div className="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" className="form-control" id="address" placeholder="1234 Main St"
+                        <input type="text" className="form-control" id="address" placeholder="1234 Main St" required
                             ></input>
                         <div className="invalid-feedback">
                             Please enter your shipping address.
@@ -142,7 +140,7 @@ return (
                     <div className="row">
                         <div className="col-md-5 mb-3">
                             <label for="country">Tipo de documento</label>
-                            <select className="form-select d-block w-100" id="tipo-documento" >
+                            <select className="form-select d-block w-100" id="tipo-documento"  required>
                                 <option value="0">Choose...</option>
                                 <option value="2">C.C</option>
                                 <option value="1">C.E</option>
@@ -155,7 +153,7 @@ return (
                         </div>
                         <div className="col-md-4 mb-3">
                             <label for="state">Numero de documento</label>
-                            <input type="text" className="form-control" id="documento-numero" placeholder="documento" ></input>
+                            <input type="text" className="form-control" id="documento-numero" placeholder="documento" required></input>
                         </div>
 
                     </div>
@@ -183,7 +181,7 @@ return (
                     <div className="row">
                         <div className="col-md-6 mb-3">
                             <label for="cc-name">Name on card</label>
-                            <input type="text" className="form-control" id="cc-name" placeholder="" ></input>
+                            <input type="text" className="form-control" id="cc-name" required></input>
                             <small className="text-muted">Full name as displayed on card</small>
                             <div className="invalid-feedback">
                                 Name on card is 
@@ -191,7 +189,7 @@ return (
                         </div>
                         <div className="col-md-6 mb-3">
                             <label for="cc-number">Credit card number</label>
-                            <input type="text" className="form-control" id="cc-number" placeholder="" ></input>
+                            <input type="text" className="form-control" id="cc-number" required ></input>
                             <div className="invalid-feedback">
                                 Credit card number is 
                             </div>
@@ -200,17 +198,17 @@ return (
                     <div className="row">
                         <div className="col-md-3 mb-3">
                             <label for="cc-expiration">Expiration</label>
-                            <input type="text" className="form-control" id="cc-expiration" placeholder=""
+                            <input type="date" className="form-control" id="cc-expiration" required
                                 ></input>
                             <div className="invalid-feedback">
-                                Expiration date 
+                                Expiration date
                             </div>
                         </div>
                         <div className="col-md-3 mb-3">
                             <label for="cc-cvv">CVV</label>
-                            <input type="text" className="form-control" id="cc-cvv" placeholder="" ></input>
+                            <input type="text" className="form-control" id="cc-cvv" required ></input>
                             <div className="invalid-feedback">
-                                Security code 
+                                Security code
                             </div>
                         </div>
                     </div>
