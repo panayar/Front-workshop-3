@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #EEEEEE !important;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-justify {
+  text-align: justify;
+}
+
+.cart-container {
+  width: 80%;
+  margin: auto;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.cart-btn {
+  width: 100%;
+  font-size: 18px;
+  background-color: #3483FA;
+  border: none;
+  color: #FFFFFF;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 100;
+}
+
+.cart-btn:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(0.9);
+          filter: brightness(0.9);
+}
+/*# sourceMappingURL=Cart.css.map */

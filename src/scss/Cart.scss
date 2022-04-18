@@ -1,0 +1,27 @@
+@import "./global.scss";
+
+.cart-container {
+    width: 80%;
+    margin: auto;
+    background-color: $bgList;
+    border-radius: $r-boder;
+    margin-top: 15px;
+}
+
+
+.cart-btn {
+    width: 100%;
+    font-size: $input-text;
+    background-color: $secondary;
+    border: none;
+    color: $bgList;
+    padding: 8px;
+    border-radius: $r-boder;
+    font-weight: 100;
+    &:hover {
+        cursor: pointer;
+        filter: brightness(0.9);
+    }
+}
+
+
