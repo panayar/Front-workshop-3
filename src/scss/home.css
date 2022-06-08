@@ -87,6 +87,27 @@ body {
   margin-bottom: 15px;
 }
 
+.cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 350px;
+  margin-bottom: 5%;
+}
+
+.cards-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
 @media (max-width: 1265px) {
   .list-container {
     width: 100%;

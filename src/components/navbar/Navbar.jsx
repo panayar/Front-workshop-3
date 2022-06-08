@@ -19,12 +19,18 @@ export default function Navbar() {
   const [element, setQuery] = useState("");
 
   //Metodos de busqueda por eventos
-  const eventEnter = (evt) => (evt.key === "Enter" ? search(element) : "");
+  const eventEnter = (evt) => (evt.key === "Enter" ? searchProducts() : "");
   const eventClick = () => search(element);
 
   const goMain = () => {
     history.push('/home/');
   };
+
+  const searchProducts = () => {
+    history.push('/search-products/');
+    // search(element);
+  }
+  
 
   const goCart = () => {
     history.push('/cart/');
