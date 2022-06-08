@@ -5,25 +5,30 @@
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     background-color: $bgList;
     padding: 16px;
     border-bottom: 1px solid $light-grey;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 5px 4px 1px rgba(204, 204, 204, 1);
+    -moz-box-shadow: 0px 5px 4px 1px rgba(204, 204, 204, 1);
+    box-shadow: 0px 5px 4px 1px rgba(204, 204, 204, 1);
+
 
 }
 
 .proveedor-text {
     font-size: 15px !important;
     color: $tertiary;
-    margin-top: 15px;
-    font-style: italic;
+    margin-top: 32px;
 }
 
 .item-img {
 
     & img {
-        width: 180px;
-        height: 180px;
+        width: 140px;
+        height: 140px;
         object-fit: cover;
         border-radius: $r-boder;
 
@@ -60,7 +65,7 @@
             width: 20px;
             height: 20px;
             margin-left: 12px;
-            
+
         }
 
     }
@@ -70,18 +75,19 @@
 }
 
 .item-title {
-    margin-top: 32px;
-    font-size: $input-text !important;
+    margin-top: -20px;
+    font-size: $input-text  !important;
     color: primaryFont;
 }
 
 
-.item-city {
+.item-brand {
     margin-top: 16px;
     margin-right: 32px;
     margin-left: auto;
     font-size: $caption;
     color: $tertiaryFont;
+    text-transform: capitalize;
 }
 
 
@@ -89,20 +95,20 @@
 @media (max-width: $mobileBreak) {
 
     .item-img {
-       
+
         & img {
             width: 120px;
             height: 120px;
         }
     }
 
-    .item-title  {
-        font-size: $paragraph !important;
+    .item-title {
+        font-size: $paragraph  !important;
     }
 
-    .item-city {
+    .item-brand {
         width: 100%;
-        margin-left: auto;  
+        margin-left: auto;
     }
 
     .item-detail {

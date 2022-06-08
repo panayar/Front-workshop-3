@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./navbar.scss";
-import Logo from "./../../assets/Logo_ML@2x.png.png.png";
-import Lupa from "./../../assets/ic_Search.png";
-import Carrito from "././../../assets/cart.png";
+import Logo from "./../../assets/logo-navbar.svg";
+import SearchIcon from "./../../assets/ic_Search.png";
+import Cart from "././../../assets/cart-icon.svg";
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { setListProduct  } from "../../slices/productSlice";
+import { setListProduct } from "../../slices/productSlice";
+
 
 export default function Navbar() {
 
@@ -18,11 +19,11 @@ export default function Navbar() {
   const [element, setQuery] = useState("");
 
   //Metodos de busqueda por eventos
-  const eventEnter = (evt) => (evt.key === "Enter" ? search(element): "");
+  const eventEnter = (evt) => (evt.key === "Enter" ? search(element) : "");
   const eventClick = () => search(element);
 
   const goMain = () => {
-    history.push('/inicio/');
+    history.push('/home/');
   };
 
   const goCart = () => {
@@ -32,7 +33,7 @@ export default function Navbar() {
   //Metodo que realiza la busqueda de datos
   const search = () => {
     try {
-      fetch(`http://localhost:8080/producto/getByTitle/${element}`) 
+      fetch(`http://localhost:8080/producto/getByTitle/${element}`)
         .then((res) => res.json())
         .then((result) => {
 
@@ -44,39 +45,46 @@ export default function Navbar() {
           setQuery("");
         });
 
-        goMain();
+      goMain();
 
-    } catch (Exception) {}
+    } catch (Exception) { }
   };
 
   return (
-    <div className="navContainer">
-      <div className="search-cont">
-        <img
-          onClick={()=>goMain()}
-          className="searchBar-logo"
-          src={Logo}
-          width="80"
-          alt="logo"
-        />
 
-        <input
-          //obtiene la informacion del input
-          onChange={(e) => setQuery(e.target.value)}
-          value={element}
-          onKeyPress={eventEnter}
-          className="searchBar"
-          placeholder="Nunca dejes de buscar"
-        />
+    <>
 
-        <button className="btn-searchBar" onClick={() => eventClick(element)}>
-          <img src={Lupa} alt="magnifier-icon" />
-        </button>
 
-        <div className="cart-cont" onClick={()=>goCart() }>
-          <img src={Carrito} alt="carrito" />
+      <div className="navContainer">
+        <div className="search-cont">
+          <img
+            onClick={() => goMain()}
+            className="searchBar-logo"
+            src={Logo}
+            width="80"
+            alt="logo"
+          />
+
+          <input
+            //obtiene la informacion del input
+            onChange={(e) => setQuery(e.target.value)}
+            value={element}
+            onKeyPress={eventEnter}
+            className="searchBar"
+            placeholder="Buscar productos"
+          />
+
+          <button className="btn-searchBar" onClick={() => eventClick(element)}>
+            <img src={SearchIcon} alt="magnifier-icon" />
+          </button>
+
+          <div className="cart-cont" onClick={() => goCart()}>
+            <img src={Cart} alt="cart" />
+          </div>
         </div>
+
       </div>
-    </div>
+
+    </>
   );
 }

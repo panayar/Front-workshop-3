@@ -3,7 +3,7 @@ import formatPrice from "../../utils/format";
 import Trash from '../../assets/trash.png';
 import "./CartItem.scss";
 
-export default function CartItem({picture, title, price , retailer, units, total}) {
+export default function CartItem({picture, title, price , units }) {
   return (
     <div className="cart-container">
         <div className="cart-img" id="contenedor">

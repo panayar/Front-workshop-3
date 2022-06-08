@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import ItemInfo from "../components/ItemInfo/ItemInfo";
 import { setListProduct , setCartProduct } from "../slices/productSlice";
-import Navbar from "../components/navbar/Navbar";
 
 
 
@@ -83,7 +82,6 @@ fetch('http://localhost:8080/carrito/addProduct/1', requestOptions)
 
 return (
 <div>
-  <Navbar />
   <br></br>
 
   {

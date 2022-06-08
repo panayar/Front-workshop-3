@@ -60,7 +60,6 @@ getProductsFromCart();
 
   return (
     <div>
-    <Navbar></Navbar>
 
     <div className="cart-container">
 

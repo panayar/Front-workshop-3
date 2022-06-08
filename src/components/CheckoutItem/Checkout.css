@@ -1,0 +1,12 @@
+p, h1, h3, h4, h5, h6, span {
+  overflow-y: hidden;
+}
+
+.text-price-total {
+  text-align: right;
+}
+
+.cart-review-conatiner {
+  padding: 10px;
+}
+/*# sourceMappingURL=Checkout.css.map */

@@ -1,0 +1,14 @@
+.carrousel-container {
+  width: 85%;
+  height: 50vh;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.carrousel-img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=carrousel.css.map */

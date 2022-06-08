@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import CheckoutItem from './CheckoutItem';
+import CheckoutItem from './checkoutItem';
 import format from "../../utils/format";
 import "./Checkout.scss";
 

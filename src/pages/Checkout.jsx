@@ -1,6 +1,5 @@
 import React from 'react'
 import bootstrap from 'bootstrap';
-import Navbar from '../components/navbar/Navbar';
 import CheckoutCart from '../components/CheckoutItem/CheckoutCart';
 import { useHistory } from "react-router-dom";
 import "../components/CheckoutItem/Checkout.scss";
@@ -63,7 +62,6 @@ const onChekout = (e) => {
 return (
 
 <>
-    <Navbar> </Navbar>
     <div className="mt-5 container">
         <div className="row">
             <div className="col-md-4 order-md-2 mb-4">

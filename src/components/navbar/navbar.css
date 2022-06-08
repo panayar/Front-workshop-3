@@ -31,7 +31,7 @@ body {
 .navContainer {
   width: 100%;
   height: auto;
-  background-color: #EFE600;
+  background-color: #3483FA;
   margin: auto;
   position: -webkit-sticky;
   position: sticky;
@@ -51,12 +51,12 @@ body {
 }
 
 .searchBar {
-  width: 69.5%;
+  width: 60%;
   height: 40px;
   border: none;
   border-radius: 4px 0px 0px 4px;
   padding: 12px;
-  margin-left: 24px;
+  margin-left: 5%;
   color: #999999;
   font-size: 18px;
 }
@@ -71,6 +71,7 @@ body {
   border-radius: 0px 4px 4px 0px;
   border: none;
   background-color: #EEEEEE;
+  margin-right: 5%;
 }
 
 .btn-searchBar:hover {
@@ -81,10 +82,8 @@ body {
 
 .searchBar-logo {
   cursor: pointer;
-}
-
-.cart-cont {
-  margin-left: 15px;
+  width: 40px;
+  height: 40px;
 }
 
 .cart-cont img {

@@ -39,7 +39,7 @@ body {
 .cart-btn {
   width: 100%;
   font-size: 18px;
-  background-color: #3483FA;
+  background-color: #30E257;
   border: none;
   color: #FFFFFF;
   padding: 8px;
@@ -51,5 +51,31 @@ body {
   cursor: pointer;
   -webkit-filter: brightness(0.9);
           filter: brightness(0.9);
+}
+
+.cart-container {
+  width: 90%;
+}
+
+.total {
+  width: 90%;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.total-text {
+  font-size: 25px;
+  text-align: left;
+  overflow-y: hidden;
+}
+
+.total-container {
+  border-top: 1px solid #d6d6d6;
+}
+
+.total-text-price {
+  font-size: 25px;
+  text-align: right;
+  margin-right: auto;
 }
 /*# sourceMappingURL=Cart.css.map */

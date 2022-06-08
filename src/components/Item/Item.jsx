@@ -6,7 +6,7 @@ import formatPrice from "../../utils/format";
 
 
 //Parametros del componentes
-const Item = ({ picture, title, price , marca, proveedor }) => {
+const Item = ({ picture, title, price , brand , retailer }) => {
 
   return (
     <div className="item-container">
@@ -20,12 +20,12 @@ const Item = ({ picture, title, price , marca, proveedor }) => {
             {formatPrice(price)}
           </p>
           <p className="item-title">{title}</p>
-          <p className="proveedor-text">Proveedor : {proveedor}</p>
+          <p className="proveedor-text">Proveedor : {retailer}</p>
         </div>
       </div>
 
-      <div className="item-city">
-        <p>{marca}</p>
+      <div className="item-brand">
+        <p>{brand }</p>
       </div>
     </div>
   );
