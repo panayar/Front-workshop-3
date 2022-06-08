@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import formatPrice from "../../utils/format";
 import Trash from '../../assets/trash.png';
-import "./CartItem.scss";
+import "./CartItem.scss"; 
 
 export default function CartItem({picture, title, price , units }) {
+
+  let trash = document.querySelector('.cart-delete');
+
+
   return (
     <div className="cart-container">
         <div className="cart-img" id="contenedor">
@@ -13,7 +17,7 @@ export default function CartItem({picture, title, price , units }) {
             <p className="cart-title">{title}</p>
         </div>
         <div className="cart-unidades">
-            <p>Unidades</p>
+            <p className='text-muted'>Unidades</p>
             {units}
         </div>
         <div className="cart-delete">

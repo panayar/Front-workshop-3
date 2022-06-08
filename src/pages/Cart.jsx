@@ -9,6 +9,8 @@ import {setTotalCartPrice} from "../slices/productSlice";
 import formatPrice from "../utils/format";
 import "../scss/Cart.scss";
 
+import Imagen from "../assets/paquete.png";
+
 
 export default function Cart() {
 
@@ -62,7 +64,6 @@ getProductsFromCart();
     <div>
 
     <div className="cart-container">
-
       {
         items.map((item) => {
           return (
