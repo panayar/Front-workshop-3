@@ -1,0 +1,16 @@
+.dash-container {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 2%;
+}
+
+.dash-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-left: 25px;
+  margin-bottom: 2%;
+}
+/*# sourceMappingURL=dashboard.css.map */

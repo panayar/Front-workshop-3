@@ -9,13 +9,22 @@ import Navbar from './components/navbar/Navbar';
 import Login from './pages/Login';
 import SignUp from './components/Forms/SignUp/SignUp';
 import Orders from './pages/Orders';
+import Admin from './pages/Admin';
+import Seller from './pages/Seller';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <>
-    <Navbar/>
+    {
+      <Navbar />
+
+    }
       <Switch>
         <Route exact path="/" component={Login} />
+        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/seller" component={Seller} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/my-orders" component={Orders} />
         <Route exact path="/search-products" component={Products} />
